@@ -1,4 +1,5 @@
 import express, { urlencoded } from "express";
+import cors from "cors";
 import dotenv from "dotenv";
 
 const app = express();
@@ -8,6 +9,8 @@ dotenv.config();
 const PORT = process.env.PORT || 9001;
 
 app.use(express());
+
+app.use(cors());
 
 app.use(
   urlencoded({
