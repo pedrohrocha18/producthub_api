@@ -9,7 +9,13 @@ dotenv.config();
 
 const PORT = process.env.PORT || 9001;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "*", // Permite todas as origens
+    methods: ["GET", "POST", "PUT", "DELETE"], // Métodos permitidos
+    allowedHeaders: ["Content-Type", "Authorization"], // Cabeçalhos permitidos
+  })
+);
 
 app.use(express.json());
 
